@@ -578,15 +578,24 @@ int main()
 }
 
 
-/*
-s13
+/**
+Subiectul nr.13
+Fişierul date.in conţine pe prima linie un șir de caractere format din litere mici ale alfabetului englez, cifre  și spații.
+Se consideră subprogramul elimincar care primeşte prin intermediul parametrului s un şir cu cel mult 255 de caractere şi prin parametrul c un caracter. Subprogramul va transforma șirul s eliminând din acesta toate aparițiile caracterului c.
+Cerinţe:
+a)	Scrieţi definiţia completă a subprogramului elimincar;
+b)	Scrieţi un program Pascal/C/care, citește din fișier șirul de caractere și afișează pe ecran șirul din care au fost eliminate toate vocalele, utilizând apeluri utile ale subprogramului elimincar.
+Exemplu:
+date.in	se afişează
+examenul de atestat  mai 2016	xmnl d tstt  m 2016
+
 */
 #include<iostream>
 #include<string.h>
 #include<fstream>
 using namespace std;
 
-ifstream fin("date.in");
+ifstream fin("cuv.in");
 
 void elimincar(char s[], char c)
 {
@@ -607,16 +616,30 @@ int main()
 }
 
 
-/*
-s14
-*/
+
+/**
+Subiectul nr.14
+Fişierul date.in conţine, pe prima linie, un șir de caractere format din litere mici ale alfabetului englez.
+Se consideră subprogramul elimincar care primeşte prin intermediul parametrului s un şir cu cel mult 255 de caractere şi prin parametrul c un caracter. Subprogramul va transforma șirul s eliminând din acesta toate aparițiile caracterului c.
+Şirul de caractere s2 este “clona” şirului de caractere s1 dacă se poate obţine din s1 prin eliminarea tuturor apariţiilor unei singure vocale. Se consideră vocală orice literă din mulţimea {a,e,i,o,u}.
+
+Cerinţe:
+a)	Scrieţi definiţia completă a subprogramului elimincar;
+b)	Scrieţi programul C/C++ care citeşte din fisier un cuvânt format din cel mult 20 litere mici ale alfabetului englez şi afişează pe ecran (dacă există), toate “clonele” acestui cuvânt, fiecare pe câte o linie a ecranului, utilizând apeluri utile ale subprogramului  elimincar
+c)	Exemplu:
+date.in	se afişează (nu neaparat in aceasta ordine)
+examenul	xamnul
+exmenul
+examenl
+
+**/
 #include<iostream>
 #include<string.h>
 #include<fstream>
 
 using namespace std;
 
-ifstream fin("date.in");
+ifstream fin("cuv.in");
 
 void elimincar(char s[], char c)
 {
@@ -645,9 +668,17 @@ int main()
 
 
 
-/*
-s15
-*/
+
+/**
+Subiectul nr.15
+În fiºierul numere.in se aflã pe prima linie maxim un milion de numere naturale de cel mult 2 cifre fiecare. Scrieþi programul C/C++ care citeºte numerele din fiºierul numere.in ºi determinã ºi afiºeazã pe ecran care dintre numerele citite apare de cele mai multe ori în fiºier. Se va utiliza un algoritm eficient din punct de vedere al spaþiului de memorie utilizat ºi al timpului de executare.
+
+Exemplu :
+
+numere.in	se afiºeazã
+5 3 1 6 3 1 3 6 1 3 	3
+
+**/
 #include<iostream>
 #include<fstream>
 
@@ -659,7 +690,7 @@ int contor[100];
 
 int main()
 {
-    int x,nr=0,maxim=-1;
+    int x,maxim=-1;
     while(fin>>x)
     {
         contor[x]++;
@@ -674,8 +705,21 @@ int main()
     return 0;
 }
 
+/**
+Subiectul nr.16
+Din fiºierul text mat.in se citesc doua numere naturale n, m (1<n<30, 1<m<30 ) apoi elementele întregi ale unei matrici de dimensiune n*m. Scrieþi un program Pascal/C/C++ care modificã matricea astfel: toate elementele egale cu valoarea maximã din matrice se înlocuiesc cu valoarea minimã de pe coloana lor. Dacã s-a fãcut mãcar o înlocuire, matricea rezultatã se va scrie în fiºierul text mat.out, altfel matricea nu se va scrie în fiºierul de ieºire. Pe ultima linie în fiºierul de ieºire se va scrie numãrul de substituþii efectuate.
 
-s16
+Ex:
+mat.in	mat.out
+3 5
+2 6 7 3
+7 1 7 1
+5 3 1 2 	2 6 1 3
+2 1 1 1
+5 3 1 2
+3
+
+*/
 
 #include <iostream>
 #include <fstream>
@@ -727,15 +771,26 @@ int main ()
 return 0;
 }
 
+
 /**
-s17
+Subiectul nr.17
+Din fişierul text DATE.TXT  conţine pe prima linie două numere naturale n şi m (0<m<n<5000), pe cea de a doua linie n numere naturale a1, a2, …, an (0 ≤ ai≤9), iar pe cea de a treia linie m numere naturale b1, b2, …, bm (0 ≤ bi≤9).
+Scrieți programul C/C++ care citește datele din fișier, verifică dacă şirul b se poate obţine din şirul a prin eliminări, fără a schimba ordinea elementelor în șirul a și afişează pe ecran un mesaj corespunzător. Se va utiliza un algoritm eficient din punct de vedere al timpului de executare și al spațiului de memorie utilizat.
+Exemplu:
+
+DATE.TXT	se afişează mesajul
+5 3
+1 6 3 1 3
+6 1 3 	“b se poate obtine din a"
+
+
 **/
 #include<iostream>
 #include<fstream>
 #include<string.h>
 using namespace std;
 
-ifstream fin("date.txt");
+ifstream fin("date.in");
 
 int main()
 {
@@ -759,9 +814,9 @@ int main()
         }
     }
     if(ok==0)
-        cout<<"nu";
+        cout<<"b nu se poate obtine din a";
     else
-        cout<<"da";
+        cout<<"b se poate obtine din a";
 
     return 0;
 }
@@ -769,13 +824,29 @@ int main()
 
 
 /**
-s18
+Subiectul nr.18
+
+a. Scrieţi o definiţie completă pentru un subprogram suma cu trei parametri:
+–	x, matrice pătratică cu elemente întregi;
+–	n, număr natural ce reprezintă numărul efectiv de linii şi coloane ale matricei x,  2≤n≤10;
+–	p, număr natural, 1≤p≤n.
+Subprogramul va returna suma elementelor aflate pe linia p a matricei.
+b. Scrieţi un program care citeşte din fişierul matrice.in un număr natural n şi o matrice cu n linii şi n coloane şi afişează în fişierul matrice.out indicii liniilor din matrice pentru care suma elementelor  este număr par. Se va folosi subprogramul definit la punctul a.
+
+Exemplu:
+matrice.in	matrice.out
+4
+1 2  3 4
+1 1  1 2
+2 2 41 8
+3 3 10 2	1 4
+
 **/
 #include<iostream>
 #include<fstream>
 using namespace std;
 
-ifstream fin("matrice.in");
+ifstream fin("date.in");
 ofstream fout("matrice.out");
 
 int suma(int x[100][100], int p, int n)
@@ -823,18 +894,32 @@ int main()
     return 0;
 }
 
-s20
+/**
+Subiectul nr.20
 
+Fişierul date.in conţine pe prima linie un text format din cel mult 250 de caractere, scris pe o singură linie. Cuvintele din text sunt separate prin câte un spaţiu, iar fiecare cuvânt este format din cel mult 20 caractere, doar literele mici ale alfabetului englez. Fișierul conține pe a doua linie un cuvânt format din cel mult 20 de caractere doar literele mici ale alfabetului englez.
+Se consideră subprogramul Sub care primește prin intermediul celor doi parametri t1 și t2 două cuvinte formate fiecare din cel puţin  două caractere şi returnează valoarea 1 dacă  cuvântul primit prin parametrul t1 reprezintă un prefix pentru cuvântul primit prin parametrul t2, sau  valoarea 0  în caz contrar;
+Cerinţe:
+a)	Scrieţi definiţia completă a subprogramului sub;
+b)	Scrieţi un program Pascal/C/C++, care citeşte din fişierul date.in în variabila s textul aflat pe prima linie și în variabila x cuvântul aflat pe cea de a doua linie din fișier și folosind apeluri utile ale subprogramului S1 şi afișează pe ecran fiecare cuvânt din text care are ca prefix cuvântul x.
+Exemplu. Dacă fişierul  date.in are conţinutul următor:
+ambii copii amestecau ideile si amintirile de peste zi
+am
+programul va afișa pe ecran
+ambii amestecau amintirile
+
+
+*/
 #include<iostream>
 #include<fstream>
 #include<string.h>
 using namespace std;
-ifstream fin("date.in");
+ifstream fin("cuv.in");
 int sub(char t1[],char t2[])
 {
     char *p;
     p=strstr(t1,t2);
-    if(p&&strncmp(t1,t2,strlen(t2))==0)
+    if(p)
         return 1;
     return 0;
 }
